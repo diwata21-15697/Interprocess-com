@@ -1,0 +1,79 @@
+h1{
+    color: black(76, 18, 28);
+    text-align: center;  
+}
+h2{
+    color: black(76, 18, 28);
+    text-align: center;
+}
+h3{
+    color: black(76, 18, 28);
+}
+
+.grid{
+    column-count: 2;
+}
+#q1{
+    padding-top: 2px;
+}
+#q2{
+    height: 200px;
+    width: 250px;
+}
+#q8{
+    display:block;;
+    height: 250px;
+    width: 240px;
+}
+#qq{
+    display:block;
+    height: 300px;
+    width: 360px;
+}
+body{
+    background-color: rgb(141, 139, 140);
+}
+h1{
+    color: black;
+    border-style: solid;
+    border-width: 2px;
+}
+.button{
+    background-color:rgb(133, 169, 213);
+    padding: 12px;
+    border-radius: 25px;
+}
+a.button{
+    text-decoration: none;
+    color: rgb(65, 10, 10);
+}
+a:hover{
+    background-color: rgb(88, 155, 155);
+    color: rgb(93, 37, 37);
+}
+
+#q3{
+    text-align: center;
+}
+#q4{
+    text-align: center;
+}
+body{
+    font-family: Georgia;
+    font-style: normal;
+}
+body{
+    text-align: justify;
+}
+
+.flex-container {
+    display: flex;
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 2px;
+    padding: 10px;
+    font-size: 15px;
+  }

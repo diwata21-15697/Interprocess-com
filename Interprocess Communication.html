@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interprocess Communication</title>
+    <meta charset="UTF-8">
+    <meta name="author" content="Hazell Aimie Queen B. Andal">
+    <meta name="keywords" content="HTML,CSS, Java Script">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+    <body>
+        <!--Type your content here-->
+            
+               
+        <h1>Inter-process Communication</h1>
+        <hr>
+        
+        <p>In computer science, inter-process communication (IPC), also spelled interprocess communication, are the mechanisms provided by an operating system for processes to manage shared data. Typically, applications can use IPC, categorized as clients and servers, where the client requests data and the server responds to client requests. Many applications are both clients and servers, as commonly seen in distributed computing.</p>
+        <p>IPC is very important to the design process for microkernels and nanokernels, which reduce the number of functionalities provided by the kernel. Those functionalities are then obtained by communicating with servers via IPC, leading to a large increase in communication when compared to a regular monolithic kernel. IPC interfaces generally encompass variable analytic framework structures. These processes ensure compatibility between the multi-vector protocols upon which IPC models rely.</p>
+        <p>An IPC mechanism is either synchronous or asynchronous. Synchronization primitives may be used to have synchronous behavior with an asynchronous IPC mechanism.</p>
+        
+        
+        
+        <div class="flex-container">
+            <div><img src="Archi.jpg" alt=""></div>
+            <div><img id="q2" src="ipc.webp" alt=""></div>
+            <div><img id="q8" src="tree.png" alt=""></div>
+            <div><img id="qq" src="icp.png" alt=""></div>
+          </div>
+
+        
+        <h2><b>Approaches</b></h2>
+        <hr>
+        <p>Different approaches to IPC have been tailored to different software requirements, such as performance, modularity, and system circumstances such as network bandwidth and latency.[1]</p>
+        
+        <table>
+            <thead>
+                <th style="background-color: gray;">Method</th>
+                <th style="background-color: gray;">Short description</th>
+                <th style="background-color: gray;">Provided by (operating systems or other environments)</th>
+            </thead>
+            <tbody style="background-color: rgb(224, 224, 224);">
+                <tr>
+                    <td>File</td>
+                    <td>A record stored on disk, or a record synthesized on demand by a file server, which can be accessed by multiple processes.</td>
+                    <td>Most Operating Systems</td>
+                </tr>
+                <tr>
+                    <td>Communications File</td>
+                    <td>A unique form of IPC in the late-1960s that most closely resembles Plan 9's 9P protocol</td>
+                    <td>Dartmouth Time-Sharing System</td>
+                </tr>
+                <tr>
+                    <td>Signal; also Asynchronous System Trap</td>
+                    <td>A system message sent from one process to another, not usually used to transfer data but instead used to remotely command the partnered process.</td>
+                    <td>Most Operating Systems</td>
+                </tr><tr>
+                    <td>Socket</td>
+                    <td>Data sent over a network interface, either to a different process on the same computer or to another computer on the network. Stream-oriented (TCP; data written through a socket requires formatting to preserve message boundaries) or more rarely message-oriented (UDP, SCTP).</td>
+                    <td>Most Operating Systems</td>
+                </tr><tr>
+                    <td>Unix Domain Socket</td>
+                    <td>Similar to an internet socket, but all communication occurs within the kernel. Domain sockets use the file system as their address space. Processes reference a domain socket as an inode, and multiple processes can communicate with one socket</td>
+                    <td>All POSIX operating systems and Windows 10[3]</td>
+                </tr><tr>
+                    <td>Message queue</td>
+                    <td>A data stream similar to a socket, but which usually preserves message boundaries. Typically implemented by the operating system, they allow multiple processes to read and write to the message queue without being directly connected to each other.</td>
+                    <td>Most Operating Systems</td>
+                </tr>
+            </tr><tr>
+                <td>Anonymous Pipe</td>
+                <td>A unidirectional data channel using standard input and output. Data written to the write-end of the pipe is buffered by the operating system until it is read from the read-end of the pipe. Two-way communication between processes can be achieved by using two pipes in opposite "directions".</td>
+                <td>All POSIX systems, Windows</td>
+            </tr></tr><tr>
+                <td>Named Pipe</td>
+                <td>A pipe that is treated like a file. Instead of using standard input and output as with an anonymous pipe, processes write to and read from a named pipe, as if it were a regular file.</td>
+                <td>All POSIX systems, Windows, AmigaOS 2.0+</td>
+            </tr></tr><tr>
+                <td>Shared memory</td>
+                <td>Multiple processes are given access to the same block of memory, which creates a shared buffer for the processes to communicate with each other.</td>
+                <td>All POSIX systems, Windows</td>
+            </tr></tr><tr>
+                <td>Message Passing</td>
+                <td>Allows multiple programs to communicate using message queues and/or non-OS managed channels. Commonly used in concurrency models.</td>
+                <td>Used in LPC, RPC, RMI, and MPI paradigms, Java RMI, CORBA, COM, DDS, MSMQ, MailSlots, QNX, others</td>
+            </tr></tr><tr>
+                <td>Memory-Mapped File</td>
+                <td>A file mapped to RAM and can be modified by changing memory addresses directly instead of outputting to a stream. This shares the same benefits as a standard file.</td>
+                <td>All POSIX systems, Windows</td>
+            
+            </tbody>
+        </table>
+
+        <h2><b>Applications</b></h2>
+        <hr>
+        <div class="grid">
+            <div>
+                <h3><b>Remote Procedure Call Interfaces</b></h3>
+                <span>Main article:</span><span><a href="https://en.wikipedia.org/wiki/Remote_procedure_call">  Remote Procedure Call</a></span>
+        
+                <ul>
+                    <li>Java's Remote Method Invocation (RMI)</li>
+                    <li>ONC RPC</li>
+                    <li>XML-RPC or SOAP</li>
+                    <li>JSON-RPC</li>
+                    <li>Message Bus (Mbus) (specified in RFC 3259) (not to be confused with M-Bus)</li>
+                    <li>NET Remoting</li>
+                    <li>gRPC</li>
+                </ul>
+            </div>
+            <div id="q1">
+                <h3><b>Platform Communication Stack</b></h3>
+                <p>The following are messaging, and information systems that utilize IPC mechanisms but don't implement IPC themselves:</p>
+                <ul>
+                    <li>KDE's Desktop Communications Protocol (DCOP) – deprecated by D-Bus</li>
+                    <li>D-Bus</li>
+                    <li>OpenWrt uses ubus micro bus architecture</li>
+                    <li>MCAPI Multicore Communications API</li>
+                    <li>SIMPL The Synchronous Interprocess Messaging Project for Linux (SIMPL)</li>
+                    <LI>9P (Plan 9 Filesystem Protocol)</LI>
+                    <li>Distributed Computing Environment (DCE)</li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        
+
+        <h3><b>Distributed Object Models</b></h3>
+        <p>The following are platform or programming language specific-APIs that use IPC:</p>
+        <ul>
+            <li>Libt2n for C++ under Linux only, handles complex objects and exceptions</li>
+            <li>Common Object Request Broker Architecture (CORBA)</li>
+            <li>Electron's asynchronous IPC, shares JSON objects between a main and a renderer process.</li>
+        </ul>
+
+        <h2 id="q1"><b>See Also</b></h2>
+        <hr>
+        <ul>
+            <li>Computer network programming</li>
+            <li>Communicating Sequential Processes (CSP paradigm)</li>
+            <li>Data Distribution Service</li>
+        </ul>
+        <h2><b>References</b></h2>
+        <hr>
+        <ol>
+            <li><a href="https://learn.microsoft.com/en-us/windows/win32/ipc/interprocess-communications?redirectedfrom=MSDN">Microsoft</a></li>
+            <li>Camurati, P (1993). "Inter-process communications for system-level design". International Workshop on Hardware/Software Codesign.</li>
+            <li><a href="https://devblogs.microsoft.com/commandline/windowswsl-interop-with-af_unix/">Microsoft. 7 February 2018. Retrieved 25 May 2018.</a></li>
+            <li><a href="https://tldp.org/pub/Linux/docs/ldp-archived/linuxfocus/English/Archives/lf-2003_01-0281.pdf"> "Concurrent programming - communication between processes</a></li>
+        </ol>
+        <h3 id="q3"><b>For more information:</b></h3>
+        <hr>
+    <p id="q4"> 
+        
+        <a class="button" href="https://dbpedia.org/page/Inter-process_communication">Go to DBPedia</a>
+        <a class="button" href="https://www.ibm.com/support/pages/interprocess-communication-ipc-overview">Go To IBM</a>
+        <a class="button" href="https://stackoverflow.com/questions/3798025/interprocess-communication-over-network-in-c">Go to Stack Overflow</a>
+    </p>
+        <h1><b>Created by: Andal, Hazell Aimie Queen B.</b></h1>
+    </body>
+    </html>
+
